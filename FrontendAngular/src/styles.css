@@ -1,0 +1,23 @@
+/* You can add global styles to this file, and also import other style files */
+
+.my_container{
+    margin-left: 5%;
+    margin-right: 5%;
+}
+
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    list-style: none;
+    text-decoration: none;
+    font-family: "Poppins";
+}
+
+body{
+    background: #e3e9f7;
+}
+
+a{
+    text-decoration: none;
+}
