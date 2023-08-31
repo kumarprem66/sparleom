@@ -4,7 +4,7 @@
     display: flex;
     flex-direction: column;
     margin: 60px;
-    border: 1px solid red;
+ 
 }
 
 .categories_container, .card_container{
@@ -19,7 +19,7 @@
 .categories_container .card_container .category_card{
 
     position:relative;
-    background-color: #205295;
+    /* background-color: #205295; */
     width: 250px;
     height: 140px;
     color: white;
@@ -31,6 +31,38 @@
     margin: 20px;
     transition: 0.3s;
     
+}
+
+.categories_container .card_container .category_card:nth-child(1){
+    background-image: url('../../assets/categories1.jpg');
+}
+
+.categories_container .card_container .category_card:nth-child(2){
+    background-image: url('../../assets/categories2.jpg');
+}
+
+.categories_container .card_container .category_card:nth-child(3){
+    background-image: url('../../assets/categories3.jpg');
+}
+
+.categories_container .card_container .category_card:nth-child(4){
+    background-image: url('../../assets/categories4.jpg');
+}
+
+.categories_container .card_container .category_card:nth-child(5){
+    background-image: url('../../assets/categories5.jpg');
+}
+
+.categories_container .card_container .category_card:nth-child(6){
+    background-image: url('../../assets/categories6.jpg');
+}
+
+.categories_container .card_container .category_card:nth-child(7){
+    background-image: url('../../assets/categories7.jpg');
+}
+
+.categories_container .card_container .category_card:nth-child(8){
+    background-image: url('../../assets/categories8.jpg');
 }
 
 h1{

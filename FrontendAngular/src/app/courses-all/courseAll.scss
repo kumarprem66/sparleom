@@ -1,0 +1,82 @@
+
+$primary-color1: #0A2647;
+$primary-color2:  #144272;
+$primary-color3: #205295;
+$primary-color4: #2C74B3;
+$primary-color5: #88aac9;
+
+.all_courses_container{
+    margin-bottom: 50px;
+    // margin-left: 100px;
+    // margin-right: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.all_courses_container h1,.all_courses_container h5{
+
+    text-align: center;
+}
+
+
+
+.all_courses_container .card_container{
+
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 30px;
+}
+
+.all_courses_container .card_container .mycard{
+    width: 17rem;
+}
+
+
+
+
+
+@media screen and (max-width: 650px) {
+    .all_courses_container .card_container{
+
+        grid-template-columns: 1fr;
+        gap: 30px;
+        justify-items: center;
+        
+    }
+
+    .all_courses_container .card_container .mycard{
+        width: 80%;
+        display: flex;
+        flex-direction: row;
+    }
+
+    .all_courses_container .card_container .mycard img{
+        width: 60%;
+        height: auto;
+    }
+
+
+}
+
+@media (min-width:651px) and (max-width: 850px) {
+   
+    .all_courses_container .card_container{
+
+        grid-template-columns: 1fr 1fr;
+        gap: 30px;
+    }
+
+
+}
+
+@media (min-width:851px) and (max-width: 1100px) {
+    .all_courses_container .card_container{
+
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 30px;
+    }
+
+
+}

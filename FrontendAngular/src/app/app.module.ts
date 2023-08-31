@@ -13,7 +13,24 @@ import { BestSellingComponent } from './best-selling/best-selling.component';
 import { StudentSaysComponent } from './student-says/student-says.component';
 import { CategoriesComponent } from './categories/categories.component';
 import { HeroInstructorComponent } from './hero-instructor/hero-instructor.component';
-import { FooterComponent } from './footer/footer.component'
+import { FooterComponent } from './footer/footer.component';
+import { CoursesComponent } from './courses/courses.component';
+import { CoursesBannerComponent } from './courses-banner/courses-banner.component';
+import { CoursesAllComponent } from './courses-all/courses-all.component';
+import { ContactComponent } from './contact/contact.component';
+import { UserAuthComponent } from './user-auth/user-auth.component';
+import { UserRegisterComponent } from './user-register/user-register.component';
+import { ProfileComponent } from './profile/profile.component';
+import { StudentDashboardComponent } from './student-dashboard/student-dashboard.component';
+import { TicketComponent } from './ticket/ticket.component';
+import { AssignmentDetailsComponent } from './assignment-details/assignment-details.component';
+import { AssignmentHeaderComponent } from './assignment-header/assignment-header.component';
+import { InstructorAssignmentComponent } from './instructor-assignment/instructor-assignment.component';
+import { AddCourseComponent } from './add-course/add-course.component';
+import { AdminCreateAnnouncementComponent } from './admin-create-announcement/admin-create-announcement.component';
+import { InstructorRegisterComponent } from './instructor-register/instructor-register.component';
+import { AdminCreateLectureComponent } from './admin-create-lecture/admin-create-lecture.component';
+import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component'
 
 @NgModule({
   declarations: [
@@ -27,7 +44,24 @@ import { FooterComponent } from './footer/footer.component'
     StudentSaysComponent,
     CategoriesComponent,
     HeroInstructorComponent,
-    FooterComponent
+    FooterComponent,
+    CoursesComponent,
+    CoursesBannerComponent,
+    CoursesAllComponent,
+    ContactComponent,
+    UserAuthComponent,
+    UserRegisterComponent,
+    ProfileComponent,
+    StudentDashboardComponent,
+    TicketComponent,
+    AssignmentDetailsComponent,
+    AssignmentHeaderComponent,
+    InstructorAssignmentComponent,
+    AddCourseComponent,
+    AdminCreateAnnouncementComponent,
+    InstructorRegisterComponent,
+    AdminCreateLectureComponent,
+    AdminDashboardComponent
   ],
   imports: [
     BrowserModule,

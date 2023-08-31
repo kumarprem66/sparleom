@@ -4,8 +4,10 @@
     height: 60vh;
     margin: auto;
     background-color: #88aac9;
+
     
     
+ 
 }
 
 .my_footer .footer_card_container{
@@ -108,6 +110,10 @@
         .my_footer .footer_card_container .footer_card:last-child{
            
             width: 200%;
+        }
+
+        .my_footer{
+            margin-top: 50px;
         }
     }
 }
