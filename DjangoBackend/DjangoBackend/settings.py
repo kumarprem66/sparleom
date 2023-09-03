@@ -48,6 +48,8 @@ INSTALLED_APPS = [
     'enrollment',
     'student',
     'submission',
+    'user',
+    'lecture'
     
 ]
 
@@ -187,3 +189,8 @@ STATIC_URL = 'static/'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CORS_ALLOW_ALL_ORIGINS = True  # For testing; use a more restricted setting in production
+
+
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')

@@ -6,7 +6,7 @@ from .views import InstructorCreateAPIView,InstructorListAPIView,InstructorDelet
 urlpatterns = [
     path('instructors/', InstructorListAPIView.as_view(),name='instructor-list'),
     path('instructors/create/',InstructorCreateAPIView.as_view(),name='instructor-create'),
-    path('instructors/<int:pk>/update/',InstructorUpdateAPIView.as_view(),name='instructor-update'),
-    path('instructors/<int:pk>/delete/',InstructorDeleteAPIView.as_view(),name='instructor-delete'),
+    path('instructors/<int:pk>/update',InstructorUpdateAPIView.as_view(),name='instructor-update'),
+    path('instructors/<int:pk>/delete',InstructorDeleteAPIView.as_view(),name='instructor-delete'),
 
 ]

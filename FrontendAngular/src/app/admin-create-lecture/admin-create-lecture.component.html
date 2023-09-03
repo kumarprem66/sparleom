@@ -1,27 +1,34 @@
 
 <section class="login_body">
     <div class="wrapper">
-        <form action="#">
+        <form  (ngSubmit)="lectureSubmit()" [formGroup]="lectureData">
           <h2>Creaate Lecture</h2>
           <div class="input-field">
-            <input type="text" required>
+            <select name="lecture_course_name" id="lecture_course_name" formControlName="lecture_course_name" required>
+              
+              <option *ngFor="let item of options" [value]="item.value">{{item.text}}</option>
+              
+            </select>
+            <label for="">Course</label>
+            
+          </div>
+          <div class="input-field">
+            <input type="text" formControlName="topic_title" value="prem kmar" required>
             <label>Lecture title</label>
           </div>
-            <div class="input-field">
-            <input type="date" required>
-            <!-- <label>Lecture Date</label> -->
-          </div>
+            
           <div class="input-field">
-            <input type="datetime" required>
-            <label>Lecture Timing</label>
+            <input type="datetime-local"  class="form-control" formControlName="timing" required>
+            <!-- <label >Lecture Timing</label> -->
           </div>
+         
           <div class="input-field">
-            <input type="url" required>
+            <input type="url" formControlName="meeting_url" required>
             <label>Lecture Meeting url</label>
           </div>
 
           <div class="input-field">
-            <input type="file">
+            <input type="file" disabled>
            
           </div>
 
@@ -31,6 +38,17 @@
         </form>
       </div>
 </section>
+
+<div class="previous_lecture_container">
+  <div class="lecture_item" *ngFor="let lecture of lecture_list">
+      <h5>{{lecture.topic_title}}</h5>
+      <p>{{lecture.timing}}</p>
+      <div> 
+        <p>{{lecture.meeting_url}}</p>
+        <a (click)="deleteLecture(lecture.id)">Delete</a>
+      </div>
+  </div>
+</div>
 
 
 

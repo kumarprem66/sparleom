@@ -12,6 +12,11 @@ class Course(models.Model):
     rating = models.IntegerField()
     image = models.ImageField(upload_to='course_image/images',blank=True,null=True)
     is_available = models.BooleanField(default=True)
+    description = models.TextField(default=None)
+    course_price = models.IntegerField(default=1000)
+    rating_count = models.IntegerField(default=20)
+    course_language = models.CharField(max_length=50,default="English")
+    student_enrolled = models.IntegerField(default=10)
 
     def __str__(self):
         return self.course_name

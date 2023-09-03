@@ -46,7 +46,9 @@
     margin-bottom: 20px;
     color: #fff;
   }
-  
+  .login_body .wrapper .input-field:nth-child(1){
+    border: 1px solid red;
+  }
   .input-field {
     position: relative;
     border-bottom: 2px solid #ccc;
@@ -57,6 +59,7 @@
     position: absolute;
     top: 50%;
     left: 0;
+    
     transform: translateY(-50%);
     color: #fff;
     font-size: 16px;
@@ -135,4 +138,42 @@
     text-align: center;
     margin-top: 30px;
     color: #fff;
+  }
+
+
+
+  /* ////////////////// list ///////////////////////// */
+
+  .previous_lecture_container{
+    margin: 3%;
+    background-color: white;
+  }
+
+  .previous_lecture_container .lecture_item{
+    display: flex;
+    flex-direction: column;
+    padding: 5px 20px;
+    border-bottom: 1px solid #0A2647;
+    height: 105px;
+    overflow: auto;
+    margin-bottom: 10px;
+    box-shadow: rgba(240, 46, 170, 0.4) -5px 5px, rgba(240, 46, 170, 0.3) -10px 10px, rgba(240, 46, 170, 0.2) -15px 15px, rgba(240, 46, 170, 0.1) -20px 20px, rgba(240, 46, 170, 0.05) -25px 25px;
+
+  }
+  .previous_lecture_container .lecture_item h5{
+    color: #0A2647;
+    font-weight: 700;
+  }
+  .previous_lecture_container .lecture_item>div{
+    display: flex;
+  }
+  .previous_lecture_container .lecture_item>div a{
+    margin-left: 20px;
+    color: red;
+    cursor: pointer;
+  }
+
+  .previous_lecture_container .lecture_item>div p{
+    color: #0A2647;
+    font-weight: 600;
   }

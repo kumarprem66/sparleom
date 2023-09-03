@@ -2,11 +2,9 @@
 <div class="admin_dash_container">
     <div>
         <h1 class="text-center text-lg font-semibold">Today's Schedule</h1>
-        <select name="" class="admin_course_select">
-            <option value="">Select Course</option>
-            <option value="">Java</option>
-            <option value="">Node</option>
-            <option value="">Mern</option>
+        <select name="" class="admin_course_select" (change)="onSelectChange($event)">
+            <option *ngFor="let item of option_courses" [value]="item.value">{{item.text}}</option>
+           
             
         </select>
     </div>
@@ -26,49 +24,14 @@
                </tr>
             </thead>
             <tbody>
-                <tr class="text-left">
-                    <td class="p-2">1.</td>
-                    <td>dlgjdlsg</td>
-                    <td>ldsgjlsdg</td>
-                    <td>Medium</td>
-
-                    <td>http://www.com</td>
-                    <th>Edit</th>
-                    <td>Delete</td>
-                    
-                </tr>
-            
-                <tr class="text-left">
-                    <td class="p-2">1.</td>
-                    <td>dlgjdlsg</td>
-                    <td>ldsgjlsdg</td>
-                    <td>Medium</td>
-                    <td>http://www.com</td>
-                    <th>Edit</th>
-                    <td>Delete</td>
-                    
-                </tr>
-            
-
-                <tr class="text-left">
-                    <td class="p-2">1.</td>
-                    <td>dlgjdlsg</td>
-                    <td>ldsgjlsdg</td>
-                    <td>Medium</td>
-                    <td>http://www.com</td>
-                    <th>Edit</th>
-                    <td>Delete</td>
-                    
-                </tr>
-            
-                <tr class="text-left">
-                    <td class="p-2">1.</td>
-                    <td>dlgjdlsg</td>
-                    <td>ldsgjlsdg</td>
-                    <td>Medium</td>
-                    <td>http://www.com</td>
-                    <th>Edit</th>
-                    <td>Delete</td>
+                <tr class="text-left" *ngFor="let lecture of letures_data; let i = index">
+                    <td class="p-2">{{i+1}}.</td>
+                    <td>{{convertDate(lecture.timing)}}</td>
+                    <td>{{convertDateInTime(lecture.timing)}}</td>
+                    <td>{{lecture.topic_title}}</td>
+                    <td>{{lecture.meeting_url}}</td>
+                    <th (click)="updateLecture(lecture.id)">Edit</th>
+                    <td  (click)="deleteLecture(lecture.id)">Delete</td>
                     
                 </tr>
             

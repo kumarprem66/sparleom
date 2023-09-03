@@ -1,21 +1,44 @@
 
 <section class="create_announce_body">
     <div class="wrapper">
-        <form action="#">
+        <form action="#" (ngSubmit)="createAnnounce()" [formGroup]="announceForm">
           <h2>CREATE ANNOUONCEMENT</h2>
           <div class="input-field">
-            <input type="text" required>
+            <input type="text" formControlName="title" required>
             <label>Enter Title</label>
           </div>
-        <div class="input-field">
-            <textarea name="" id="" placeholder="Enter Details"></textarea>
+          <div class="input-field">
+            <textarea name="" id="" placeholder="Enter Details" formControlName="description"></textarea>
           
+          </div>
+          <div class="input-field">
+            <input type="date" formControlName="publish_date" required>
+            <!-- <label>Enter date</label> -->
           </div>
           <button type="submit">Send</button>
           
+         
         </form>
-      </div>
+
+
+
+     
+       
+    </div>
+   
+
   </section>
+  <div class="previous_announcement_container">
+    <div class="announcement_item" *ngFor="let ann of ann_list">
+        <h5>{{ann.title}}</h5>
+        <p>{{ann.description}}</p>
+        <div> 
+          <p>{{ann.publish_date}}</p>
+          <a (click)="deleteAnnoun(ann.id)">Delete</a>
+        </div>
+    </div>
+  </div>
+
   
   
   

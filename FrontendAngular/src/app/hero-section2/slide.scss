@@ -37,7 +37,7 @@ h2 {
     display: flex;
     flex-direction: column;
     padding: 20px;
-    background: $white;
+    background: white;
     border-radius: 12px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 15%);
     scroll-snap-align: start;
@@ -45,7 +45,7 @@ h2 {
 }
 
 .card:hover {
-    color: $white;
+    color: white;
     background: $primary-color1;
 }
 
@@ -90,7 +90,7 @@ h2 {
 }
 
 .cards::-webkit-scrollbar-track {
-    background: $thumb;
+    background: $primary-color4;
 }
 
 @media (min-width: 500px) {

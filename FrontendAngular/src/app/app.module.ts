@@ -31,6 +31,16 @@ import { AdminCreateAnnouncementComponent } from './admin-create-announcement/ad
 import { InstructorRegisterComponent } from './instructor-register/instructor-register.component';
 import { AdminCreateLectureComponent } from './admin-create-lecture/admin-create-lecture.component';
 import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.component'
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HttpClientModule } from '@angular/common/http';
+import { DashboardComponent } from './dashboard/dashboard.component';
+
+import { BsDatepickerModule } from 'ngx-bootstrap/datepicker';
+import { TimepickerModule } from 'ngx-bootstrap/timepicker';
+import { AdminAuthComponent } from './admin-auth/admin-auth.component';
+import { CommonModule } from '@angular/common';
+import { CourseDetailComponent } from './course-detail/course-detail.component';
+
 
 @NgModule({
   declarations: [
@@ -61,14 +71,28 @@ import { AdminDashboardComponent } from './admin-dashboard/admin-dashboard.compo
     AdminCreateAnnouncementComponent,
     InstructorRegisterComponent,
     AdminCreateLectureComponent,
-    AdminDashboardComponent
+    AdminDashboardComponent,
+    DashboardComponent,
+    AdminAuthComponent,
+    CourseDetailComponent,
+
+
+
+    
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    
+    HttpClientModule,
+    ReactiveFormsModule,
     IonicModule.forRoot(),
+    FormsModule,
+    BsDatepickerModule.forRoot(),
+    // TimepickerModule.forRoot(),
+    CommonModule,
   ],
+
   providers: [],
   bootstrap: [AppComponent]
 })
