@@ -19,11 +19,27 @@ export class InstructorService {
   createInstructor(data:any):Observable<any>{
 
     const headers = new HttpHeaders({
-      "Content-Type":"application/json"
+      "Content-Type":"Application/json"
     })
-    return this.http.post(this.baseUrl+"create",JSON.stringify(data),{headers})
+    return this.http.post(`${this.baseUrl}create`,JSON.stringify(data),{headers})
   }
 
+
+  updateInstructor(id:number,data:any){
+
+    const headers = new HttpHeaders({
+      "Content-Type":"Application/json"
+    })
+    return this.http.put(`${this.baseUrl}${id}/update`,JSON.stringify(data), {headers})
+  }
+
+  deleteInstructor(id:number){
+
+    return this.http.delete(`${this.baseUrl}${id}/delete`)
+  }
   
+  getSingleInstrcutor(id:number){
+    return this.http.get(`${this.baseUrl}${id}/`)
+  }
 
 }

@@ -18,15 +18,21 @@ export class AdminDashboardComponent implements OnInit{
 
   letures_data:any[] = []
 
-  selectedValue:number = 2
+  selectedValue:number = 0
+
+  is_instructor:boolean = true
+
+  
 
   constructor(private cour_ser:CourseService,private lec_ser:LecturesService,private router:Router
     ){
 
+      console.log("called")
 
   }
 
   onSelectChange(event:any){
+    
     this.selectedValue = event.target.value
     
     this.getLectureOfCourse(Number(this.selectedValue))
@@ -35,44 +41,77 @@ export class AdminDashboardComponent implements OnInit{
 
   ngOnInit(): void {
     
+ 
     this.getCourses()
-    // this.getAllLectureOfCourse()
-    this.getLectureOfCourse(this.selectedValue)
+
+    // this.getLectureOfCourse(Number(this.selectedValue))
+
+    this.getAllLecturesOfInstructor(1)
   }
 
   getCourses(){
-    this.cour_ser.getcourses().subscribe((response:any)=>{
-      const courses = response.results
-      // console.log(courses)
-      courses.forEach((element :any) => {
-        this.option_courses.push({value:element.id,text:element.course_name})
-      });
+
+    if(this.is_instructor){
     
+
+      this.getCourseByinstructor(1)
+  
+    }else{
+
+      this.cour_ser.getcourses().subscribe((response:any)=>{
+        const courses = response.results
+        // console.log(courses)
+        courses.forEach((element :any) => {
+          this.option_courses.push({value:element.id,text:element.course_name})
+        });
+      
+      })
+  
+    }
+
+
+    
+   
+    
+  }
+
+  getCourseByinstructor(id:number){
+
+    this.cour_ser.getInstructorCourses(id).subscribe((response:any)=>{
+     
+      const intrcu_name = response
+      console.log(response)
+
+
+      intrcu_name.forEach((element:any) => {
+
+        
+        this.option_courses.push({value:element.id,text:element.course_name})
+
+
+      });
     })
   }
 
-
   getLectureOfCourse(c_id:number){
+
+
+
     this.lec_ser.getLectureOfCourse(c_id).subscribe((response:any)=>{
+
       this.letures_data = response
 
 
-      this.letures_data.forEach((ele:any)=>{
-
-
-
-        const datetime = new Date(ele.timing)
-        // const formattedDate = this.datePipe.transform(datetime,'yyyy-MM-dd')
-        // const formattedTime = this.datePipe.transform(datetime,'HH:mm:ss')
-
-
-        // console.log(formattedDate)
-        // console.log(formattedTime)
-      })
-      // console.log(this.letures_data)
+      
     })
   }
 
+  getAllLecturesOfInstructor(id:number){
+    this.lec_ser.getInstructorLectures(id).subscribe((response:any)=>{
+      this.letures_data = response
+     
+    })
+  }
 
   updateLecture(id:number){
 

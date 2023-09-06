@@ -3,6 +3,11 @@ from .models import Lecture
 from .serializers import LectureSerializer
 from rest_framework import generics,viewsets
 from django.http import JsonResponse
+from rest_framework.views import APIView
+from rest_framework import status
+from rest_framework.response import Response
+from instructor.models import Instructor
+from course.models import Course
 # Create your views here.
 
 class createLecture(generics.ListCreateAPIView):
@@ -34,4 +39,28 @@ def getLecturesOfCourse(request,course_id):
         return JsonResponse(data, safe=False)
         
     except Exception as e:
+
         return JsonResponse({'error':str(e)})
+    
+
+class InstructorLectures(APIView):
+    def get(self,request,instructor_id):
+        try:
+            courses = Course.objects.filter(Instructor=instructor_id)
+
+            lectures = Lecture.objects.filter(lecture_course_name__in=courses)
+
+            serializer = LectureSerializer(lectures,many=True)
+
+            return Response(serializer.data,status=status.HTTP_200_OK)
+    
+        except Course.DoesNotExist:
+            return Response(
+                {"message": "Instructor or associated courses not found."},
+                status=status.HTTP_404_NOT_FOUND
+            )
+        except Lecture.DoesNotExist:
+            return Response(
+                {"message": "Lectures not found for this instructor."},
+                status=status.HTTP_404_NOT_FOUND
+            )

@@ -87,6 +87,12 @@ h2 {
   justify-content: space-between;
   margin: 25px 0 35px 0;
   color: #fff;
+  /* border: 1px solid red; */
+}
+
+.as_a_instructor a{
+
+  margin-left: 10px;
 }
 
 #remember {
@@ -100,6 +106,8 @@ h2 {
 
 .forget label p {
   margin-left: 8px;
+  margin-top: 15px;
+  /* border: 1px solid red; */
 }
 
 .wrapper a {

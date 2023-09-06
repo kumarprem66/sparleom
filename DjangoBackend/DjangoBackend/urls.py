@@ -31,6 +31,9 @@ urlpatterns = [
     path('sparleom/',include('submission.urls')),
     path('sparleom/',include('user.urls')),
     path('sparleom/',include('lecture.urls')),
+    path('sparleom/',include('category.urls')),
+    path('sparleom/',include('ticket.urls')),
+    
   
 ]
 

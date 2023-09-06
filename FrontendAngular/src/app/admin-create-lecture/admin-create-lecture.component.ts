@@ -15,6 +15,13 @@ export class AdminCreateLectureComponent implements OnInit{
 
   lectureData:FormGroup;
 
+  // hiding leacture create form
+  is_instructor = true
+  is_student = true
+
+
+
+
   course_list:string[] = []
   // Ensure you have this property
     
@@ -43,9 +50,15 @@ export class AdminCreateLectureComponent implements OnInit{
 
   ngOnInit(): void {
 
-    this.getAllLectures()
+   
     this.getcourses()
 
+    if(this.is_instructor){
+      this.getInstructorLecture(1)
+    }else{
+
+      this.getAllLectures()
+    }
     this.route.queryParams.subscribe((param:any)=>{
 
       // console.log(param.lect_id)
@@ -64,7 +77,7 @@ export class AdminCreateLectureComponent implements OnInit{
     if(this.lectureData.valid){
       const lecturevalue  = this.lectureData.value
 
-      if(this.isupdate == 0){
+      if(this.isupdate == 0 || this.isupdate == undefined){
         this.lecSer.createLecture(lecturevalue).subscribe((response)=>{
           // console.log(response)
           
@@ -159,5 +172,13 @@ export class AdminCreateLectureComponent implements OnInit{
         this.getAllLectures()
       })
     }
+  }
+
+
+  getInstructorLecture(id:number){
+    this.lecSer.getInstructorLectures(id).subscribe((response:any)=>{
+
+      this.lecture_list = response
+    })
   }
 }

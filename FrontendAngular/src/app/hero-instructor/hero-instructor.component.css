@@ -46,6 +46,7 @@
     color: white;
     margin-right: 20px;
     line-height: 100%;
+    cursor: pointer;
 
 }
 
@@ -57,9 +58,10 @@
 .hero_section_instructor .hero_container_constructor .hero_right_instructor{
     height: 100%;
     width: 100%;
+    padding: 20px;
 }
 
-.hero_section_instructor .hero_container_constructor .hero_right_instructor img{
+.hero_section_instructor .hero_container_constructor .hero_right_instructor iframe{
     height: 100%;
     width: 100%;
 }

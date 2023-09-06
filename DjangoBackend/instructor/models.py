@@ -16,10 +16,15 @@ class Instructor(models.Model):
     gender = models.CharField(max_length=10, choices=GENDER_CHOICES)
     data_of_birth = models.DateField()
     department = models.ForeignKey(Department,on_delete=models.CASCADE)
-    email = models.EmailField()
+    email = models.EmailField(unique=True)
     contact_number = PhoneNumberField()
     password = models.CharField(max_length=128)
-  
+    experience = models.IntegerField(default=None)
+    qualification = models.CharField(max_length=100,default=None)
+    expertise = models.CharField(max_length=100,default=None)
+    biodata = models.ImageField(upload_to='instruc_biaodata/images',blank=True,null=True,default=None)
+    expected_salary = models.IntegerField(default=None)
+
 
     def __str__(self):
         return self.name

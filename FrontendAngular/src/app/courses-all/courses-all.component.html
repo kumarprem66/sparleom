@@ -4,6 +4,7 @@
     <h5>Choose from 130,000 online video courses with new additions published every month</h5>
 
     <div class="card_container">
+
         <div class="card mycard" *ngFor="let course of all_courses; let i = index" (click)="show_course_details(course.id)">
             <img src="../../assets/courses{{(i+1)%8}}.jpg" class="card-img-top" alt="...">
             <div class="card-body">
@@ -22,8 +23,11 @@
               <br>
               
               <div class="edit_delete_div">
-                <a (click)="edit_course(course.id)" class="btn btn-primary">Edit</a>
-                <a (click)="delete_course(course.id)" class="btn btn-secondary">Delete</a>
+                <a (click)="edit_course(course.id)" *ngIf="isAdmin" class="btn btn-primary">Edit</a>
+                <a (click)="delete_course(course.id)"   *ngIf="isAdmin"  class="btn btn-secondary">Delete</a>
+                <a (click)="details_course(course.id)"   *ngIf="!isAdmin"  class="btn btn-primary">Details</a>
+                <a (click)="buy_course(course.id)"   *ngIf="!isAdmin"  class="btn btn-secondary">Buy Now</a>
+                
               </div>
 
             </div>

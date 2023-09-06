@@ -49,7 +49,11 @@ INSTALLED_APPS = [
     'student',
     'submission',
     'user',
-    'lecture'
+    'lecture',
+    'category',
+    'rest_framework.authtoken',
+    'ticket',
+   
     
 ]
 
@@ -83,12 +87,17 @@ TEMPLATES = [
     },
 ]
 
+
+
+
 REST_FRAMEWORK = {
     'DEFAULT_RENDERER_CLASSES': [
         'rest_framework.renderers.JSONRenderer',
         'rest_framework.renderers.BrowsableAPIRenderer',
     ],
     'DEFAULT_AUTHENTICATION_CLASSES': [
+         'rest_framework.authentication.TokenAuthentication',
+         
         # ... your authentication classes ...
     ],
     'DEFAULT_PERMISSION_CLASSES': [

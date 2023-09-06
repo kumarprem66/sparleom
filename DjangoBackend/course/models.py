@@ -1,6 +1,7 @@
 from django.db import models
 from instructor.models import Instructor
 from department.models import Department
+from category.models import Category
 # Create your models here.
 
 class Course(models.Model):
@@ -17,6 +18,7 @@ class Course(models.Model):
     rating_count = models.IntegerField(default=20)
     course_language = models.CharField(max_length=50,default="English")
     student_enrolled = models.IntegerField(default=10)
+    course_category = models.ForeignKey(Category,on_delete=models.CASCADE,default=1)
 
     def __str__(self):
         return self.course_name

@@ -8,32 +8,32 @@
         <div class="add_course_form">
           <div>
             <div class="input-field">
-              <input type="text" formControlName="course_code" required>
-              <label>Enter Course Code</label>
+              <input type="text" formControlName="course_code" placeholder="Enter Course Code" required>
+              <!-- <label>Enter Course Code</label> -->
             </div>
             <div class="input-field">
-              <input type="text" formControlName="course_name" required>
-              <label>Enter Course Name</label>
+              <input type="text" formControlName="course_name" placeholder="Enter Course Name" required>
+              <!-- <label>Enter Course Name</label> -->
             </div>
               <div class="input-field">
-              <input type="text" formControlName="duration" required>
-              <label>Enter Course Duration</label>
+              <input type="text" formControlName="duration" placeholder="Enter Course Duration" required>
+              <!-- <label>Enter Course Duration</label> -->
             </div>
             <div class="input-field">
-              <input type="number" formControlName="course_price" required>
-              <label>Enter Price</label>
+              <input type="number" formControlName="course_price" placeholder="Enter Price" required>
+              <!-- <label>Enter Price</label> -->
             </div>
             <div class="input-field">
-              <input type="number" formControlName="rating" required>
-              <label>Enter Rating</label>
+              <input type="number" formControlName="rating" placeholder="Enter Rating" required>
+              <!-- <label>Enter Rating</label> -->
             </div>
             <div class="input-field">
-              <input type="number" formControlName="rating_count" required>
-              <label>Number of Rating</label>
+              <input type="number" formControlName="rating_count" placeholder="Number of Rating" required>
+              <!-- <label>Number of Rating</label> -->
             </div>
             <div class="input-field">
-              <input type="text" formControlName="course_language" required>
-              <label>Enter Language</label>
+              <input type="text" formControlName="course_language" placeholder="Enter Language" required>
+              <!-- <label>Enter Language</label> -->
             </div>
 
     
@@ -45,26 +45,28 @@
             
           </div>
           <div class="input-field">
+            <label>Instructor id </label>
             <select name="Instructor" id="Instructor" formControlName="Instructor" required>
               <option *ngFor="let item of intruc_options" [value]="item.value">{{item.text}}</option>
               
             </select>
-            <label>Instructor id </label>
+            
           </div>
           <div class="input-field">
+            <label>Department id</label>
             <select name="department" id="department" formControlName="department">
               <option *ngFor="let item of depart_options" [value]="item.value">{{item.text}}</option>
               
             </select>
-            <label>Department id</label>
+          
           </div>
-          <div class="input-field check">
+          <div class="check">
             <input type="checkbox" formControlName="is_available" required>
             <label>is available</label>
           </div>
           <div class="input-field">
-            <input type="number" formControlName="student_enrolled" required>
-            <label>Studnet Erolled</label>
+            <input type="number" formControlName="student_enrolled" placeholder="Studnet Erolled" required>
+            <!-- <label>Studnet Erolled</label> -->
           </div>
           <div class="input-field">
             <!-- <input type="text" formControlName="" required> -->
@@ -73,7 +75,11 @@
           </div>
          </div>
         </div>
-        <button type="submit">Save</button>
+
+
+        <div class="create_button">
+          <input type="submit" value="Create" >
+        </div>
         
       </form>
     </div>

@@ -49,9 +49,14 @@
     flex-direction: row;
 
     justify-content: space-between;
-    padding: 5px 10px;
-    background-color: #205295;
+    padding: 10px;
+    background-color: red;
     border-radius: 10px;
     color: white;
     font-size: 18px;
+}
+
+.instructor_assign_container>div .previous_assignment_container .assignment_item>div>span{
+
+    margin-left: 10px;
 }

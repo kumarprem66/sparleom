@@ -1,5 +1,5 @@
 from django.urls import include, path
-from .views import CourseListCreateView, CourseListView,CourseListUpdateView,CourseListDeleteView,getSingleCourse,getInstructorsCourse
+from .views import CourseListCreateView,CourseListView,CourseListUpdateView,CourseListDeleteView,getSingleCourse,getInstructorsCourse,courseByCategory
 from rest_framework.routers import DefaultRouter
 
 
@@ -14,5 +14,7 @@ urlpatterns = [
     path('courses/<int:pk>/delete', CourseListDeleteView.as_view(), name='course-delete'),
 
     path('courses/get_instructor_course/<int:instruc_id>',getInstructorsCourse,name='instruc-courses'),
-    path('',include(router.urls))
+    path('',include(router.urls)),
+    path('courses/get_category_course/<int:cat_id>',courseByCategory,name='category-courses')
+
 ]

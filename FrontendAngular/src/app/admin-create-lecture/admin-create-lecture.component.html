@@ -1,5 +1,5 @@
 
-<section class="login_body">
+<section class="login_body" *ngIf="!is_instructor">
     <div class="wrapper">
         <form  (ngSubmit)="lectureSubmit()" [formGroup]="lectureData">
           <h2>Creaate Lecture</h2>

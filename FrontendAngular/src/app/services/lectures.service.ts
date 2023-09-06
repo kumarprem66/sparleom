@@ -44,4 +44,8 @@ export class LecturesService {
     const url = `${this.baseUrl}${lectureId}`
     return this.http.get(url)
   }
+
+  getInstructorLectures(id:number){
+    return this.http.get(`http://127.0.0.1:8000/sparleom/instructor/${id}/lectures/`)
+  }
 }

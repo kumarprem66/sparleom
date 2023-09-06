@@ -19,6 +19,9 @@ export class CourseService {
   }
 
   getcourses(){
+
+    
+
     return this.http.get<any[]>(this.baseUrl)
   }
 
@@ -43,6 +46,12 @@ export class CourseService {
       "Content-Type":"Application/json"
     })
     return this.http.put(`${this.baseUrl}${id}/update`,JSON.stringify(data),{headers})
+  }
+
+
+  getCategoriesCourses(cat_id:number){
+
+    return this.http.get<any[]>(`${this.baseUrl}get_category_course/${cat_id}`)
   }
 }
 

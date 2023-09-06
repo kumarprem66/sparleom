@@ -3,11 +3,12 @@
     background-color: #0A2647;
 
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    justify-content: center;
     margin-bottom: 50px;
    
 }
-.banner_container h2{
+.banner_container h2,p{
 
     color: white;
     margin-left: 30px;

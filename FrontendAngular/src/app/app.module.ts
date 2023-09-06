@@ -40,6 +40,9 @@ import { TimepickerModule } from 'ngx-bootstrap/timepicker';
 import { AdminAuthComponent } from './admin-auth/admin-auth.component';
 import { CommonModule } from '@angular/common';
 import { CourseDetailComponent } from './course-detail/course-detail.component';
+import { AboutComponent } from './about/about.component';
+import { StudentRegsiterComponent } from './student-regsiter/student-regsiter.component';
+import { PaymentComponent } from './payment/payment.component';
 
 
 @NgModule({
@@ -75,6 +78,9 @@ import { CourseDetailComponent } from './course-detail/course-detail.component';
     DashboardComponent,
     AdminAuthComponent,
     CourseDetailComponent,
+    AboutComponent,
+    StudentRegsiterComponent,
+    PaymentComponent,
 
 
 

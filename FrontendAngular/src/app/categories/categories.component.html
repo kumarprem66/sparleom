@@ -2,40 +2,11 @@
     <h1>Explore top categories</h1>
 
     <div class="card_container">
-        <div class="category_card">
-            <h2>Programming</h2>
-            <a href="" class="">Courses</a>
+        <div class="category_card" *ngFor="let cat of categories">
+            <h2>{{cat.cat_name}}</h2>
+            <a (click)="getCategoryCourses(cat.id)" class="">Courses</a>
         </div>
-        <div class="category_card">
-            <h2>VFX</h2>
-            <a href="">Courses</a>
-        </div>
-        <div class="category_card">
-            <h2>App Development</h2>
-            <a href="">Courses</a>
-        </div>
-        <div class="category_card">
-            <h2>Technology</h2>
-            <a href="">Courses</a>
-           
-        </div>
-        <div class="category_card">
-            <h2>Graphics Design</h2>
-            <a href="">Courses</a>
-        </div>
-        <div class="category_card">
-            <h2>Music</h2>
-            <a href="">Courses</a>
-        </div>
-        <div class="category_card">
-            <h2>Product Design</h2>
-            <a href="">Courses</a>
-        </div>
-        <div class="category_card">
-            <h2>Video Editing</h2>
-            <a href="">Courses</a>
-        </div>
-
-        Lorem ipsum dolor sit amet consectetur adipisicing elit. Eos, consectetur odit velit est cupiditate eius odio vitae reprehenderit molestiae voluptatibus inventore tempore iste laborum quia, consequatur in autem, eum molestias. Natus harum facilis, fugit quidem beatae voluptatibus itaque qui hic.
+       
+       
     </div>
 </section>

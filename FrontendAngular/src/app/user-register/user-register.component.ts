@@ -14,24 +14,26 @@ export class UserRegisterComponent implements OnInit{
   userData:FormGroup
   constructor(private fb:FormBuilder,private regSer:RegisterService,private router:Router){
     this.userData = this.fb.group({
-      user_name : ['',Validators.required],
-      user_email : ['',Validators.required],
-      user_password: ['',Validators.required]
+      username : ['',Validators.required],
+      email : ['',Validators.required],
+      password: ['',Validators.required],
+
     })
   }
   ngOnInit(): void {
     
-    
-
+  
   }
 
   userRegister(){
-    console.log("premrfm")
+
    if(this.userData.valid){
     const uservalue = this.userData.value
+    console.log(uservalue)
+
+    
     this.regSer.userRegister(uservalue).subscribe((response)=>{
       alert("Registered")
-      // localStorage.setItem('sparleom-user',JSON.stringify(uservalue))
       this.router.navigate(['login'])
       console.log(uservalue)
     })
@@ -39,8 +41,6 @@ export class UserRegisterComponent implements OnInit{
     alert("every field need valid data")
    }
   }
-
-  
 
 
 

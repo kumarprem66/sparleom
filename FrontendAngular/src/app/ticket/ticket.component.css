@@ -44,7 +44,7 @@
     
     }
    
-    .ticket_container>div .previous_ticket_container .ticket_item{
+    /* .ticket_container>div .previous_ticket_container .ticket_item{
     
         display: flex;
         flex-direction: row;
@@ -55,4 +55,17 @@
         border-radius: 10px;
         color: white;
         font-size: 18px;
-    }
+    } */
+
+    
+    .ticket_container>div .previous_ticket_container .ticket_item{
+        display: flex;
+        flex-direction: column;
+        padding: 5px 20px;
+        border-bottom: 1px solid #0A2647;
+        max-height: 70px;
+        overflow: auto;
+        margin-bottom: 10px;
+        box-shadow: rgba(240, 46, 170, 0.4) -5px 5px, rgba(240, 46, 170, 0.3) -10px 10px, rgba(240, 46, 170, 0.2) -15px 15px, rgba(240, 46, 170, 0.1) -20px 20px, rgba(240, 46, 170, 0.05) -25px 25px;
+    
+      }

@@ -3,12 +3,25 @@
     <div class="wrapper">
         <form action="#" (ngSubmit)="loginSubmit()" [formGroup]="loginForm">
           <h2>Login</h2>
-            <div class="input-field">
-            <input type="text" formControlName="user_email" required>
-            <label>Enter your email</label>
+
+          <div class="as_a_instructor">
+            <label for="instructor">
+              <input type="checkbox" id="instructor">
+              <!-- <p>As a Instrcutor</p> -->
+            </label>
+            <a>As a Instrcutor</a>
           </div>
+
           <div class="input-field">
-            <input type="password" formControlName="user_password" required>
+            <input type="text" formControlName="username" required>
+            <label>Enter Username</label>
+          </div>
+          <!-- <div class="input-field">
+            <input type="email" formControlName="email" required>
+            <label>Enter your email</label>
+          </div> -->
+          <div class="input-field">
+            <input type="password" formControlName="password" required>
             <label>Enter your password</label>
           </div>
           <div class="forget">

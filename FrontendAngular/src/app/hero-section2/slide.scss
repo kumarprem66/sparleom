@@ -7,7 +7,7 @@ $primary-color5: #88aac9;
 
 
 .container {
-    max-width: 1400px;
+    max-width: 2000px;
     padding: 50px 15px;
     margin: 0 auto;
     background-color: white;
@@ -43,6 +43,19 @@ h2 {
     scroll-snap-align: start;
     transition: all 0.2s;
 }
+
+.card .mycard .card-body>div:last-child{
+    // border: 1px solid red;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    column-gap: 10px;
+    // flex-direction: row;
+}
+.card .mycard .card-body>div:last-child a{
+    height: 38px;
+    overflow: hidden;
+}
+
 
 .card:hover {
     color: white;

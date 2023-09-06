@@ -17,6 +17,9 @@ import { AdminCreateLectureComponent } from './admin-create-lecture/admin-create
 import { AdminAuthComponent } from './admin-auth/admin-auth.component';
 import { StudentDashboardComponent } from './student-dashboard/student-dashboard.component';
 import { CourseDetailComponent } from './course-detail/course-detail.component';
+import { AboutComponent } from './about/about.component';
+import { StudentRegsiterComponent } from './student-regsiter/student-regsiter.component';
+import { PaymentComponent } from './payment/payment.component';
 
 const routes: Routes = [
   {path:'',component:DashboardComponent},
@@ -25,18 +28,24 @@ const routes: Routes = [
   {path:"courses-all",component:CoursesAllComponent},
   {path:"admin-add-course",component:AddCourseComponent},
   {path:"admin-create-announcement",component:AdminCreateAnnouncementComponent},
+  {path:"announcement",component:AdminCreateAnnouncementComponent},
   {path:"admin-dashboard",component:AdminDashboardComponent},
   {path:"instructor-dashboard",component:AdminDashboardComponent},
   {path:"student_dashboard",component:StudentDashboardComponent},
   {path:"admin-create-lecture",component:AdminCreateLectureComponent},
+  {path:"lecture",component:AdminCreateLectureComponent},
   {path:"contact",component:ContactComponent},
   {path:"courses",component:CoursesComponent},
   {path:"instruc-assignment",component:InstructorAssignmentComponent},
+  {path:"assignment",component:InstructorAssignmentComponent},
   {path:"instruc-register",component:InstructorRegisterComponent},
   {path:"profile",component:ProfileComponent},
   {path:"ticket",component:TicketComponent},
   {path:"admin-auth",component:AdminAuthComponent},
   {path:"course-detail",component:CourseDetailComponent},
+  {path:"about",component:AboutComponent},
+  {path:"student-register",component:StudentRegsiterComponent},
+  {path:"payment",component:PaymentComponent},
 
 
 
