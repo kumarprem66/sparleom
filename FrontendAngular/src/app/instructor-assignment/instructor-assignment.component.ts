@@ -15,6 +15,7 @@ export class InstructorAssignmentComponent implements OnInit{
 
   all_assignment:any[] = []
   assignmentForm:FormGroup
+  instructor_id:number = 0
 
   constructor(private course_service:CourseService,private fb:FormBuilder,private assign_service:AssignmentService){
 
@@ -30,9 +31,23 @@ export class InstructorAssignmentComponent implements OnInit{
   ngOnInit(): void {
 
 
-    this.getCourseByinstructor(1)
-    this.getAllAssignemnt()
+  
     
+   
+
+    const  localIns = localStorage.getItem("instructor_data")
+    if(localIns != null){
+
+      const parseIns = JSON.parse(localIns)
+      this.instructor_id = parseIns.id
+      
+    }
+
+    if(this.instructor_id != 0 && this.instructor_id != undefined){
+      this.getCourseByinstructor(this.instructor_id)
+    }
+
+    this.getAllAssignemnt() 
 
   }
 

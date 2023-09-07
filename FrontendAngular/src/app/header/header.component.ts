@@ -39,6 +39,8 @@ export class HeaderComponent implements OnInit{
      
     // }
 
+  
+
     const local_user = localStorage.getItem("who_is_login")
     const is_purchase = localStorage.getItem("can_purchase")
     if(is_purchase != null){
@@ -130,6 +132,30 @@ export class HeaderComponent implements OnInit{
       this.router.navigate(['/admin-auth'])
     }
 }
+
+studentlogout(){
+  const is_agree = confirm("Are you sure? want to Logout")
+  if(is_agree){
+    this.menuType = 'default'
+ 
+    
+    localStorage.removeItem('who_is_login')
+    this.router.navigate([''])
+  }
+}
+  instructorlogout(){
+
+    const is_agree = confirm("Are you sure? want to Logout")
+    if(is_agree){
+      this.menuType = 'default'
+   
+      
+      localStorage.removeItem('who_is_login')
+      this.router.navigate([''])
+    }
+  }
+
+
   login(){
 
     if(this.current_user=="Login"){
@@ -139,8 +165,10 @@ export class HeaderComponent implements OnInit{
   }
 
   canPurchase(){
-    if(this.not_purchase=="Admin"){
-      this.router.navigate(['/admin-auth'])
+    if(this.not_purchase=="Profile"){
+      localStorage.setItem('who_is_login',"student")
+      alert("refresh the page")
+      this.router.navigate(['/student_dashboard'])
     }else{
       this.router.navigate(['/profile'])
     }

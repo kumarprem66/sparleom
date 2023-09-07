@@ -42,4 +42,9 @@ export class InstructorService {
     return this.http.get(`${this.baseUrl}${id}/`)
   }
 
+
+  instructorLogin(email: string, password: string): Observable<any> {
+    const body = { email, password };
+    return this.http.post(`${this.baseUrl}login/`, body);
+  }
 }

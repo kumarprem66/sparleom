@@ -119,6 +119,10 @@ h2 {
   text-decoration: underline;
 }
 
+.wrapper .info{
+  color: red;
+}
+
 button {
   background: #fff;
   color: #000;

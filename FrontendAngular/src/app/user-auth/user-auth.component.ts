@@ -18,6 +18,7 @@ export class UserAuthComponent implements OnInit{
   constructor(private fb:FormBuilder,private regSer:RegisterService,
     private router:Router,private insSer:InstructorService){
     this.loginForm = this.fb.group({
+      is_ins:[false],
       username:['',Validators.required],
       // email : ['',Validators.required],
       password: ['',Validators.required]
@@ -75,40 +76,49 @@ export class UserAuthComponent implements OnInit{
     if(this.loginForm.valid){
       const current_user = this.loginForm.value
          
+      console.log(current_user)
   
 
+      if(current_user.is_ins){
+        localStorage.setItem("who_is_login","instructor")
+
+      }else{
+        
         this.regSer.login(current_user.username, current_user.password).subscribe((response: any) => {
       
            
-            alert("Welcome")
-            localStorage.setItem("sparleom-user-token",response.token)
-        
-
-            this.regSer.getUserDetails(response.token).subscribe((responseuser:any)=>{
-             
-
-              console.log(responseuser.user.id)
-              const currentUser = {
-                "username":responseuser.user.username,
-                "id":responseuser.user.id,
-                "email":responseuser.user.email
-
-              }
-              localStorage.setItem("current-user",JSON.stringify(currentUser))
-              localStorage.setItem("who_is_login","user")
-            })
-           
-          
-            this.router.navigate([''])
-         
-        },(error)=>{
-            alert("Incorrect Crediancials, try registering")
-        });
+          alert("Welcome,refresh the page once")
+          localStorage.setItem("sparleom-user-token",response.token)
       
+
+          this.regSer.getUserDetails(response.token).subscribe((responseuser:any)=>{
+           
+
+            console.log(responseuser.user.id)
+            const currentUser = {
+              "username":responseuser.user.username,
+              "id":responseuser.user.id,
+              "email":responseuser.user.email
+
+            }
+            localStorage.setItem("current-user",JSON.stringify(currentUser))
+            localStorage.setItem("who_is_login","user")
+          })
+         
+        
+          this.router.navigate([''])
+       
+      },(error)=>{
+          alert("Incorrect Crediancials, try registering")
+      });
+    
+      }
 
 
       
     }
 
   }
+
+  
 }

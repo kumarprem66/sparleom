@@ -34,6 +34,8 @@ export class PaymentComponent implements OnInit{
       
       this.stu_ser.addCourseToStudent(stu_id,this.course_id).subscribe((response)=>{
         alert("success")
+        localStorage.setItem("who_is_login","student")
+        // localStorage.setItem("student_data",JSON.stringify())
         console.log(response)
       },(error)=>{
         alert(error.error.error)

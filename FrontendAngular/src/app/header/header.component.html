@@ -30,7 +30,10 @@
                 <a (click)="logout()" [ngClass]="{'active': activeItem === 'Logout'}" (click)="setActiveItem('Logout')" *ngIf="current_user != 'Login'">Logout</a>
             </li>
             <li>
-                <a (click)="canPurchase()" [ngClass]="{'active': activeItem === 'Admin'}" (click)="setActiveItem('Admin')">{{not_purchase}}</a>
+                <a (click)="canPurchase()" [ngClass]="{'active': activeItem === 'Profile'}" (click)="setActiveItem('Profile')">{{not_purchase}}</a>
+            </li>
+            <li>
+                <a routerLink="/admin-auth" [ngClass]="{'active': activeItem === 'Admin'}" (click)="setActiveItem('Admin')">Admin</a>
             </li>
         </ul>
 
@@ -55,6 +58,9 @@
           
             <li>
                 <a routerLink="/profile" [ngClass]="{'active': activeItem === 'Profile'}" (click)="setActiveItem('Add Course')">Profile</a>
+            </li>
+            <li>
+                <a (click)="instructorlogout()">Logout</a>
             </li>
         </ul>
 
@@ -102,6 +108,9 @@
             <li>
                 <a routerLink="/profile" [ngClass]="{'active': activeItem === 'Profile'}" (click)="setActiveItem('Profile')">Profile</a>
             </li>
+           <li>
+            <a (click)="studentlogout()">Logout</a>
+           </li>
         </ul>
       </div>
 

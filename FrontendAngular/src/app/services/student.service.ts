@@ -45,6 +45,10 @@ export class StudentService {
     return this.http.post(url, body);
   }
   
+
+  getSingleStudent(id:number){
+    return this.http.get(`${this.baseUrl2}${id}`);
+  }
  
 }
 

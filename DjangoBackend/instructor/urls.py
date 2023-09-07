@@ -1,7 +1,7 @@
 
 from django.contrib import admin
 from django.urls import path,include
-from .views import InstructorCreateAPIView,InstructorListAPIView,InstructorDeleteAPIView,InstructorUpdateAPIView,SingleInstructor
+from .views import InstructorCreateAPIView,InstructorListAPIView,InstructorDeleteAPIView,InstructorUpdateAPIView,SingleInstructor,InstructorLogin
 from rest_framework.routers import DefaultRouter
 
 # from rest_framework.authtoken.views import obtain_auth_token
@@ -19,5 +19,6 @@ urlpatterns = [
 
     path('',include(router.urls)),
     # path('instructors/login',obtain_auth_token,name='instructor-login'),
+     path('instructors/login/', InstructorLogin.as_view(), name='instructor-login'),
 
 ]

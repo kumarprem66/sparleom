@@ -3,7 +3,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { InstructorService } from '../services/instructor.service';
 import { catchError } from 'rxjs/operators';
 import { throwError } from 'rxjs';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-instructor-register',
@@ -20,7 +20,7 @@ export class InstructorRegisterComponent implements OnInit{
 
   is_updating:number = 0
 
-  constructor(private fb:FormBuilder,private ins_ser:InstructorService,private route:ActivatedRoute){
+  constructor(private fb:FormBuilder,private ins_ser:InstructorService,private route:ActivatedRoute,private router:Router){
     this.instructor_form = this.fb.group({
       name:['',Validators.required],
       gender:['',Validators.required],
@@ -84,14 +84,18 @@ instruc_regis() {
       .subscribe((response) => {
         // Handle the response here
         alert("Instructor created sucessfully")
-        this.getAllInstructor();
+        localStorage.setItem("who_is_login","instructor")
+        localStorage.setItem("instructor_data",JSON.stringify(response))
+        console.log(response)
+        this.router.navigate(['instructor-dashboard'])
+        // this.getAllInstructor();
       });
 
 
     }
 
 
-    this.getAllInstructor()
+    // this.getAllInstructor()
    
 
 

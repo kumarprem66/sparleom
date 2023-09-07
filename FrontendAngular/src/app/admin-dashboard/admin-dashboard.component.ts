@@ -20,7 +20,9 @@ export class AdminDashboardComponent implements OnInit{
 
   selectedValue:number = 0
 
-  is_instructor:boolean = true
+  is_instructor:boolean = false
+
+  instructor_id:number = 0
 
   
 
@@ -42,11 +44,32 @@ export class AdminDashboardComponent implements OnInit{
   ngOnInit(): void {
     
  
-    this.getCourses()
 
-    // this.getLectureOfCourse(Number(this.selectedValue))
+    const ins = localStorage.getItem("who_is_login")
+    if(ins=="instructor"){
+      this.is_instructor = true
+    }else{
+      this.getCourses()
+    }
 
-    this.getAllLecturesOfInstructor(1)
+    const  localIns = localStorage.getItem("instructor_data")
+    if(localIns != null){
+
+      const parseIns = JSON.parse(localIns)
+      this.instructor_id = parseIns.id
+    }
+    
+
+    if(this.instructor_id != 0 && this.instructor_id != undefined){
+
+      this.getCourseByinstructor(this.instructor_id)
+      this.getAllLecturesOfInstructor(this.instructor_id)
+      
+    }
+
+
+
+
   }
 
   getCourses(){

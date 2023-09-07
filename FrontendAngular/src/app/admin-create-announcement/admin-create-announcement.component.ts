@@ -12,6 +12,7 @@ export class AdminCreateAnnouncementComponent implements OnInit{
 
   announceForm:FormGroup
   ann_list:any[] = []
+  is_inst_is_stu:boolean = false
 
   constructor(private fb:FormBuilder,private ans:AnnouncementService,private router:Router){
     this.announceForm = this.fb.group({
@@ -22,6 +23,11 @@ export class AdminCreateAnnouncementComponent implements OnInit{
   }
 
   ngOnInit(): void {
+
+    const is_not_admin = localStorage.getItem("who_is_login")
+    if(is_not_admin != "admin"){
+      this.is_inst_is_stu = true
+    }
     
     this.showAnnounces()
   }

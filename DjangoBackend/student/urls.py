@@ -13,6 +13,6 @@ urlpatterns = [
     path('student/',StudentListView.as_view(),name='student-list'),
     path('student/<int:pk>/update',StudentUpdateView.as_view(),name='student-update'),
     path('student/<int:pk>/delete',StudentDeleteView.as_view(),name='student-delete'),
-     path('students/', include(router.urls)),
-     path('students/<int:pk>/add-course/', AddCourseToStudent.as_view(),name="update-student-course"),
+    path('', include(router.urls)),
+    path('students/<int:pk>/add-course/', AddCourseToStudent.as_view(),name="update-student-course"),
 ]

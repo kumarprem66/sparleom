@@ -6,11 +6,14 @@
 
           <div class="as_a_instructor">
             <label for="instructor">
-              <input type="checkbox" id="instructor">
+              <input type="checkbox" id="instructor" formControlName="is_ins">
               <!-- <p>As a Instrcutor</p> -->
             </label>
             <a>As a Instrcutor</a>
           </div>
+          <!-- <div class="info">
+            <p>In case of instructor provide Email in place of Username</p>
+          </div> -->
 
           <div class="input-field">
             <input type="text" formControlName="username" required>
@@ -35,6 +38,7 @@
           <div class="register">
             <p>Don't have an account? <a routerLink="/register">Register</a></p>
           </div>
+          
         </form>
       </div>
 </section>
