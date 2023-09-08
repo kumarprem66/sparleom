@@ -113,7 +113,7 @@ We welcome contributions to the Education System project! Whether you want to re
 ### License
 This project is licensed under the MIT License.
 
-![Travel-Beyond Logo]()
+![Database Entity](images/splendor.png)
 
 
 
