@@ -113,7 +113,7 @@ We welcome contributions to the Education System project! Whether you want to re
 ### License
 This project is licensed under the MIT License.
 
-![Database Entity](images/splendor.png)
+![Database Entity](https://github.com/kumarprem66/sparleom/blob/main/images/splendors.png)
 
 
 
